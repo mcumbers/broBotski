@@ -1,15 +1,15 @@
-let victim = '153887358133993474';
-let reactEmoji = ':shoppy:268174175229837312';
-let ahdGuild = '258447100193275904';
+let victim = '155440962049409024';
+let reactEmoji = '🍆';
+let GoOGuild = '117055622377111554';
 
 exports.conf = {
-    enabled: false,
+    enabled: true,
     spamProtection: false,
 }
 
 exports.run = (client, msg, guild) => {
     return new Promise((resolve) => {
-        if (msg.guild.id === ahdGuild){
+        if (msg.guild.id === GoOGuild){
             if (msg.author.id === victim){
                 msg.react(reactEmoji);
             }
