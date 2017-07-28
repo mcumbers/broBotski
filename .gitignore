@@ -107,3 +107,5 @@ storage/userCache/
 botConfig\.json\.bak
 
 storage/DMManager\.json
+
+botConfig\.json
