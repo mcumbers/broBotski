@@ -8,17 +8,17 @@ const func = async (client, executor, target, msg, action, reason, silent = fals
         .setTimestamp();
 
     switch (action.toLowerCase()) {
-			case "ban":
-    	case "vcban":
+		case "ban":
+    	case "vc ban":
     	case "softban":
     	case "kick":
-    	case "vckick":
+    	case "vc kick":
     	case "mute":
     		modLog.setDescription(`**Member:** ${target.tag} (${target.id})\n**Action:** ${action}\n**Reason:** ${reason}`);
     		modLog.setColor("#ff0000");
     		break;
     	case "unmute":
-    	case "vcunban":
+    	case "vc unban":
     	case "report":
     		modLog.setDescription(`**Member:** ${target.tag} (${target.id})\n**Action:** ${action}`);
     		modLog.setColor("#fff200");
@@ -43,15 +43,15 @@ const func = async (client, executor, target, msg, action, reason, silent = fals
     			break;
     		case "warning": actionMessage = `You have recieved a warning in the ${channel.guild.name} Discord. \n **Reason:** ${reason}\n\n` + boilerplate
     			break;
-    		case "vckick": actionMessage = `You have been kicked from voice chat in the ${channel.guild.name} Discord. \n **Reason:** ${reason}\n\n` + boilerplate
+    		case "vc kick": actionMessage = `You have been kicked from voice chat in the ${channel.guild.name} Discord. \n **Reason:** ${reason}\n\n` + boilerplate
     			break;
-    		case "vcban": actionMessage = `You have been banned from voice chat in the ${channel.guild.name} Discord. \n **Reason:** ${reason}\n\n` + boilerplate
+    		case "vc ban": actionMessage = `You have been banned from voice chat in the ${channel.guild.name} Discord. \n **Reason:** ${reason}\n\n` + boilerplate
     			break;
     		case "softban": actionMessage = `You have been kicked from the ${channel.guild.name} Discord, and your messages from the past 24 hours have been removed. \n **Reason:** ${reason}\n\n` + boilerplate
     			break;
     		case "unmute": actionMessage = `Your mute on the ${channel.guild.name} Discord has been lifted. You can now use the text and voice chat again.\n\n`
     			break;
-    		case "vcunban": actionMessage = `Your voice chat ban on the ${channel.guild.name} Discord has been lifted. You can now use the voice chat again.\n\n`
+    		case "vc unban": actionMessage = `Your voice chat ban on the ${channel.guild.name} Discord has been lifted. You can now use the voice chat again.\n\n`
     			break;
     		default:
     			break;
@@ -59,7 +59,7 @@ const func = async (client, executor, target, msg, action, reason, silent = fals
 
     	await target.send(actionMessage);
 
-			await msg.react("✅");
+		await msg.react("✅");
     }
 
     //TODO: add mod actions in client.funcs.userCache
