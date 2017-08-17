@@ -6,11 +6,13 @@ exports.conf = {
     spamProtection: false,
 }
 
-exports.run = (client, msg, guild) => {
+exports.run = async (client, msg, guild) => {
     return new Promise((resolve) => {
         if (msg.guild.id === johnnies){
             if (msg.author.id === victim){
-                msg.send("<@322210616158978059>'s a fag.");
+                await msg.react("🇫");
+                await msg.react("🇦");
+                await msg.react("🇬");
             }
         }
         resolve();
