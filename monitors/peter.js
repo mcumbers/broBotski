@@ -7,14 +7,11 @@ exports.conf = {
 }
 
 exports.run = async (client, msg, guild) => {
-    return new Promise((resolve) => {
-        if (msg.guild.id === johnnies){
-            if (msg.author.id === victim){
-                await msg.react("🇫");
-                await msg.react("🇦");
-                await msg.react("🇬");
-            }
+    if (msg.guild.id === johnnies){
+        if (msg.author.id === victim){
+            let firstReact = await msg.react("🇫");
+            let secondReact = await msg.react("🇦");
+            let thirdReact = await msg.react("🇬");
         }
-        resolve();
-    });
+    }
 };
