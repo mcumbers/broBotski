@@ -1,12 +1,18 @@
 const botConfig = require("../botConfig.json");
 
 exports.init = (client) => {
-	client.devLogging = botConfig.devLogging;
+	//Setting global vars
+    client.devLogging = botConfig.devLogging;
     client.devLogChannel = botConfig.devLogChannel;
-    client.user.setGame(botConfig.playing);
+    client.confirmEmoji = client.emojis.find('id', botConfig.confirmReaction);
+    client.denyEmoji = client.emojis.find('id', botConfig.denyReaction);
+    client.user.setActivity(botConfig.playing);
     client.user.setStatus(botConfig.status);
-    client.ytKey = botConfig.ytKey;
 
+    //Don't send restart notification if we're not using the dev log
+    if (!client.devLogging) return;
+
+    //Dev log restart embed
     const botRestart = new client.methods.Embed()
         .setAuthor(client.user.tag, client.user.avatarURL())
         .setColor("#fff200")

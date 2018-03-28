@@ -104,8 +104,8 @@ bwd/conf/
 
 storage/userCache/
 
-botConfig\.json\.bak
+botConfig.json
 
 storage/DMManager\.json
 
-botConfig\.json
+bwd/provider/

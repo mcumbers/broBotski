@@ -1,11 +1,11 @@
 {
 	"botToken": "",
-	"ownerID": [""],
+	"ownerID": "",
 	"prefix": "",
-	"ytKey": "",
 	"devLogging": false,
 	"devLogChannel": "",
-	"dmManagerServer": "",
+	"confirmEmoji": "",
+	"denyEmoji": "",
 	"playing": "",
 	"status": "online",
 	"wordBlacklist": [""]
