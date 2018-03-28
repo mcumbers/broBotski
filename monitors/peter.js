@@ -2,7 +2,7 @@ let victim = '322210616158978059';
 let johnnies = '319384085300641793';
 
 exports.conf = {
-    enabled: true,
+    enabled: false,
     spamProtection: false,
 }
 
